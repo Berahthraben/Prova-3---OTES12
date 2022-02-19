@@ -1,0 +1,56 @@
+CREATE TABLE Capacidade (
+	id serial NOT NULL,
+	nivel int NOT NULL,
+	descricao varchar(2048) NOT NULL,
+	fonte int NOT NULL,
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE Volume (
+	id serial NOT NULL,
+	enep_1 int NOT NULL,
+	enep_2 int NOT NULL,
+	eneg_2 int NOT NULL,
+	result float NOT NULL,
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE SMI (
+	id serial NOT NULL,
+	Mt int NOT NULL,
+	Fc int NOT NULL,
+	Fa int NOT NULL,
+	Fd int NOT NULL,
+	result float NOT NULL,
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE Integridade (
+	id serial NOT NULL,
+	ameaca varchar(128) NOT NULL,
+	seguranca varchar(128) NOT NULL,
+	result float NOT NULL,
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE DRE (
+	id int NOT NULL,
+	dre_d int NOT NULL,
+	dre_e int NOT NULL,
+	result float NOT NULL,
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE Exposicao (
+	id int NOT NULL,
+	expo_p float NOT NULL,
+	expo_c float NOT NULL,
+	result float NOT NULL,
+	PRIMARY KEY(id)
+);
+
+select * from Capacidade;
+
+/* CONSULTAS */
+
+SELECT * from Funcionario WHERE (Date_Part('year', '11/06/2021'::date) - Date_Part('year', data_contratacao::date)) > 5;
